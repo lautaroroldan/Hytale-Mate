@@ -1,14 +1,11 @@
 {
-  "Group": "group",
-  "Name": "ModName",
+  "Group": "MateArgento",
+  "Name": "Mate",
   "Version": "1.0.0",
   "Description": "Your description",
   "Authors": [
     {
-      "Name": "your name"
-    },
-    {
-      "Name": "Alii"
+      "Name": "RebelCarrot"
     }
   ],
   "Website": "",
@@ -16,6 +13,6 @@
   "Dependencies": {},
   "OptionalDependencies": {},
   "DisabledByDefault": false,
-  "Main": "package.mainclass",
+  "Main": "com.rebelcarrot.FirstPlugin",
   "IncludesAssetPack": true
 }

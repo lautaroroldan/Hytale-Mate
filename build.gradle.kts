@@ -17,9 +17,16 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
-    implementation(files("libs/HytaleServer.jar"))
+    compileOnly(files("libs/HytaleServer.jar"))
 }
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    destinationDirectory.set(file("C:\\Users\\steam\\AppData\\Roaming\\Hytale\\UserData\\Mods"))
+
+    from("src/main/resources")
 }

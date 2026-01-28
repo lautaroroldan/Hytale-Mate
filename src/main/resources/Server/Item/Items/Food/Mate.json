@@ -1,0 +1,279 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Mate.name",
+    "Description": "server.items.Mate.description"
+  },
+  "Icon": "Icons/ItemsGenerated/Mate.png",
+  "Categories": [
+    "Blocks.Deco"
+  ],
+  "Quality": "Common",
+  "MaxStack": 1,
+  "MaxDurability": 10,
+  "Recipe": {
+    "TimeSeconds": 3.5,
+    "Input": [
+      {
+        "ItemId": "Mate_Empty",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Fibre",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Fieldcraft",
+        "Type": "Crafting",
+        "Categories": [
+          "Tools"
+        ]
+      }
+    ]
+  },
+  "Scale": 1,
+  "Interactions": {
+    "Primary": "Block_Primary",
+    "Secondary": "Root_Mate_Fill"
+  },
+  "Consumable": true,
+  "Utility": {
+    "Compatible": true
+  },
+  "BlockType": {
+    "DrawType": "Model",
+    "Opacity": "Transparent",
+    "CustomModel": "Blocks/Miscellaneous/Mate.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Weight": 1,
+        "Texture": "Blocks/Miscellaneous/Mate_Texture.png"
+      }
+    ],
+    "CustomModelScale": 0.7,
+    "HitboxType": "Plant_Small",
+    "Flags": {
+      "IsStackable": false
+    },
+    "RandomRotation": "YawStep1",
+    "Gathering": {
+      "Soft": {}
+    },
+    "BlockParticleSetId": "Stone",
+    "BlockSoundSetId": "Wood"
+  },
+  "State": {
+    "Filled_Water": {
+      "Variant": true,
+      "TranslationProperties": {
+        "Name": "server.items.Mate_Water.name"
+      },
+      "Recipe": null,
+      "Consumable": true,
+      "MaxStack": 1,
+      "Icon": "Icons/ItemsGenerated/Mate.png",
+      "Scale": 1,
+      "IconProperties": {
+        "Scale": 0.8,
+        "Rotation": [
+          22.5,
+          278,
+          328
+        ],
+        "Translation": [
+          0,
+          -9
+        ]
+      },
+      "BlockType": {
+        "CustomModelTexture": [
+          {
+            "Weight": 1,
+            "Texture": "Blocks/Miscellaneous/Mate_Texture.png"
+          }
+        ],
+        "DrawType": "Model",
+        "Opacity": "Transparent",
+        "CustomModel": "Blocks/Miscellaneous/Mate.blockymodel",
+        "CustomModelScale": 0.7,
+        "CustomModelAnimation": "Blocks/Miscellaneous/Mug_Full.blockyanim",
+        "HitboxType": "Food_Medium",
+        "Flags": {
+          "IsStackable": false
+        },
+        "RandomRotation": "YawStep1",
+        "BlockSoundSetId": "Wood",
+        "Gathering": {
+          "Harvest": {},
+          "Soft": {
+            "IsWeaponBreakable": false
+          }
+        }
+      },
+      "Interactions": {
+        "Secondary": {
+          "Interactions": [
+            {
+              "Type": "Charging",
+              "FailsOnDamage": true,
+              "HorizontalSpeedMultiplier": 0.4,
+              "Effects": {
+                "ItemAnimationId": "Consume",
+                "LocalSoundEventId": "SFX_Health_Potion_Low_Drink",
+                "ClearAnimationOnFinish": true,
+                "ClearSoundEventOnFinish": true
+              },
+              "Next": {
+                "2.0": {
+                  "Type": "DrinkMateInteraction"
+                }
+              },
+              "Failed": {
+                "Type": "Simple",
+                "Effects": {
+                  "ClearAnimationOnFinish": true,
+                  "ClearSoundEventOnFinish": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Washed_Out": {
+      "Variant": true,
+      "TranslationProperties": {
+        "Name": "Mate Lavado"
+      },
+      "Recipe": null,
+      "Consumable": false,
+      "MaxStack": 1,
+      "Icon": "Icons/ItemsGenerated/Deco_Mug_Water.png",
+      "Scale": 1,
+      "IconProperties": {
+        "Scale": 0.8,
+        "Rotation": [22.5, 278.0, 328.0],
+        "Translation": [0.0, -9.0]
+      },
+      "BlockType": {
+        "CustomModelTexture": [
+          {
+            "Weight": 1,
+            "Texture": "Blocks/Miscellaneous/Mug_Texture.png"
+          }
+        ],
+        "DrawType": "Model",
+        "Opacity": "Transparent",
+        "CustomModel": "Blocks/Miscellaneous/Mug.blockymodel",
+        "CustomModelScale": 0.7,
+        "CustomModelAnimation": "Blocks/Miscellaneous/Mug_Full.blockyanim",
+        "HitboxType": "Food_Medium",
+        "Flags": {
+          "IsStackable": false
+        },
+        "RandomRotation": "YawStep1",
+        "BlockSoundSetId": "Wood",
+        "Gathering": {
+          "Harvest": {},
+          "Soft": {
+            "IsWeaponBreakable": false
+          }
+        }
+      },
+      "Interactions": {
+        "Secondary": {
+          "Interactions": [
+            {
+              "Type": "Condition",
+              "Crouching": true,
+              "Failed": {
+                "Type": "Simple"
+              },
+              "Next": {
+                "Type": "CleanMateInteraction"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Empty": {
+      "Variant": true,
+      "TranslationProperties": {
+        "Name": "Mate Vacío"
+      },
+      "Recipe": null,
+      "Consumable": false,
+      "MaxStack": 1,
+      "MaxDurability": 0,
+      "Icon": "Icons/ItemsGenerated/Food_Mate_Empty.png",
+      "Scale": 2,
+      "IconProperties": {
+        "Scale": 0.8,
+        "Rotation": [22.5, 278.0, 328.0],
+        "Translation": [0.0, -9.0]
+      },
+      "BlockType": {
+        "DrawType": "Model",
+        "Opacity": "Transparent",
+        "CustomModel": "Blocks/Miscellaneous/Mug.blockymodel",
+        "CustomModelTexture": [
+          {
+            "Weight": 1,
+            "Texture": "Blocks/Miscellaneous/Mug_Empty_Texture.png"
+          }
+        ],
+        "CustomModelScale": 0.5,
+        "HitboxType": "Plant_Small",
+        "Flags": {
+          "IsStackable": false
+        },
+        "RandomRotation": "YawStep1",
+        "BlockSoundSetId": "Wood",
+        "Gathering": {
+          "Harvest": {},
+          "Soft": {}
+        }
+      },
+      "Interactions": {
+        "Secondary": {
+          "Interactions": [
+            {
+              "Type": "UseMateInteraction"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "PlayerAnimationsId": {
+    "Parent": "Item",
+    "Animations": {
+      "Consume": {
+        "FirstPerson": "Characters/Animations/Items/Main_Handed/Item/Attacks/Drink/Drink_FPS.blockyanim",
+        "ThirdPerson": "Characters/Animations/Items/Main_Handed/Item/Attacks/Drink/Drink.blockyanim",
+        "Speed": 1,
+        "Looping": true
+      }
+    }
+  },
+  "IconProperties": {
+    "Scale": 0.8,
+    "Rotation": [
+      22.5,
+      278,
+      328
+    ],
+    "Translation": [
+      0,
+      -9
+    ]
+  },
+  "Tags": {
+    "Type": [
+      "Deco"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Blocks_Wood"
+}

@@ -1,0 +1,83 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Mate_Without_Yerba.name",
+    "Description": "server.items.Mate.description"
+  },
+  "Icon": "Icons/ItemsGenerated/Mate_Empty.png",
+  "Categories": [
+    "Blocks.Deco"
+  ],
+  "Quality": "Common",
+  "MaxStack": 1,
+  "Recipe": {
+    "TimeSeconds": 3.5,
+    "Input": [
+      {
+        "ResourceTypeId": "Wood_Planks",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Stick",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Workbench",
+        "Type": "Crafting",
+        "Categories": [
+          "Workbench_Survival"
+        ]
+      }
+    ]
+  },
+  "Interactions": {
+    "Primary": "Block_Primary",
+    "Secondary": "Block_Secondary"
+  },
+  "Consumable": false,
+  "Utility": {
+    "Compatible": true
+  },
+  "BlockType": {
+    "DrawType": "Model",
+    "Opacity": "Transparent",
+    "CustomModel": "Blocks/Miscellaneous/Mate_Empty.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Weight": 1,
+        "Texture": "Blocks/Miscellaneous/Mate_Empty_Texture.png"
+      }
+    ],
+    "CustomModelScale": 0.7,
+    "HitboxType": "Food_Medium",
+    "Flags": {
+      "IsStackable": false
+    },
+    "RandomRotation": "YawStep1",
+    "Gathering": {
+      "Soft": {}
+    },
+    "BlockParticleSetId": "Stone",
+    "BlockSoundSetId": "Wood"
+  },
+  "Scale": 1,
+  "IconProperties": {
+    "Scale": 0.8,
+    "Rotation": [
+      22.5,
+      278,
+      328
+    ],
+    "Translation": [
+      0,
+      -9
+    ]
+  },
+  "Tags": {
+    "Type": [
+      "Deco"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Blocks_Wood"
+}
